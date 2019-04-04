@@ -1,0 +1,39 @@
+{% extends 'geonode_base.html' %}
+{% load wagtailcore_tags menu_tags %}
+{% block extra_head %}
+<style>
+
+/* 2nd level */
+.tree > li > label {
+  padding:10px 15px;  
+}
+
+/* 3rd level */
+.tree > li > ul > li > a {
+  font-size:10pt;
+  margin-left:15px;
+}
+
+	.tut-nav {
+		margin: 10px 0px;
+	}
+</style>
+{% endblock %}
+{% block extra_script %}
+<script>
+$('.tree-toggle').click(function () {
+	$(this).parent().children('ul.tree').toggle(200);
+});
+</script>
+{% endblock %}
+{% block body %}
+<div id="wrap">
+	<div class="page-header">
+		<h2>{{page.title}}{% if page.sub_title %}<small>{{page.sub_title}}</small>{% endif %}</h2>
+	</div>
+	{{ page.body|richtext }}
+</div>
+{% endblock %}
+{% block sidebar %}
+	{% main_menu max_levels=5 template="tutorials/main_menu.html" sub_menu_template="tutorials/sub_menu.html" %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load menu_tags %}
+{% if menu_items %}
+{% for item in menu_items %}
+		{% if item.has_children_in_menu %}
+			<li>
+				<label class="tree-toggle nav-header" label-default=""><a href="{{ item.href }}">{{item.text}}</a></label>
+				<ul class="nav tree">
+					{% sub_menu item template=current_template %}
+				</ul>
+			</li>
+		{% else %}
+			<li>
+				<a href="{{ item.href }}">{{item.text}}</a>
+			</li>
+		{% endif %}
+{% endfor %}
+{% endif %}

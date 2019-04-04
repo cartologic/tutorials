@@ -1,0 +1,19 @@
+info = {
+        "title": "Tutorials",
+        "description": "Tutorials",
+        "author": "Cartologic",
+        "home_page": "",
+        "help_url": "",
+        "tags": ["Tutorials", "Wagtail"],
+        "licence": "BSD",
+        "author_website": "http://www.cartologic.com",
+        "single_instance": True,
+}
+
+
+def install():
+    pass
+
+
+def uninstall():
+    pass
