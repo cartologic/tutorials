@@ -1,6 +1,7 @@
 {% extends 'geonode_base.html' %}
 {% load wagtailcore_tags menu_tags %}
 {% block extra_head %}
+{{ block.super }}
 <style>
 
 /* 2nd level */
@@ -26,11 +27,14 @@ $('.tree-toggle').click(function () {
 });
 </script>
 {% endblock %}
+{% block app_title %}
+	{{ page.title }}
+{% endblock %}
 {% block body %}
 <div id="wrap">
-	<div class="page-header">
-		<h2>{{page.title}}{% if page.sub_title %}<small>{{page.sub_title}}</small>{% endif %}</h2>
-	</div>
+<!--	<div class="page-header">-->
+<!--		<h2>{{page.title}}</h2>-->
+<!--	</div>-->
 	{{ page.body|richtext }}
 </div>
 {% endblock %}
