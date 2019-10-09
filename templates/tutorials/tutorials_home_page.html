@@ -1,5 +1,7 @@
 {% extends 'geonode_base.html' %}
 {% load wagtailcore_tags menu_tags %}
+
+{% block title %}{{ block.super }} – {{ page.title }}{% endblock %}
 {% block extra_head %}
 {{ block.super }}
 <style>
